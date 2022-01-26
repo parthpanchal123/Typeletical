@@ -197,6 +197,7 @@ body {
 .dropdown {
   float: right;
   overflow: hidden;
+  margin-right:12px;
 }
 
 /* Dropdown button */
