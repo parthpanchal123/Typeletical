@@ -4,23 +4,52 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Testing</title>
+    <title>Typeletical</title>
     <link href="./style.css" rel="stylesheet" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,200&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div id="container">
-      <input type="text" id="textInput" autofocus placeholder="Start Typing .." class="unselectable"/>
-
-      <div id="wordsDiv">
+    <div class="navbar">
+      <div class="dropdown">
+        <button class="dropbtn">
+          Word-Length
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <li><button id="length_1">2-5</button></li>
+          <li><button id="length_2">5-8</button></li>
+          <li><button id="length_3">More than 8</button></li>
+        </div>
       </div>
+    </div>
+    <div id="container">
+      <input
+        type="text"
+        id="textInput"
+        autofocus
+        placeholder="Start Typing .."
+        class="unselectable"
+      />
+
+      <div id="wordsDiv"></div>
 
       <div id="scoreDiv">
-<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <div class="lds-roller">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
-
     </div>
     <script type="module" src="/main.js"></script>
   </body>
