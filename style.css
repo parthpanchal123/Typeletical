@@ -36,7 +36,7 @@ body {
 #wordsDiv {
   display: inline-flex;
   flex-wrap: wrap;
-  margin: 10%;
+  margin: 5%;
 }
 
 #wordsDiv > p {
@@ -156,6 +156,10 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+#scoreDiv {
+  margin-top: 0px;
 }
 
 #scoreDiv > p {
