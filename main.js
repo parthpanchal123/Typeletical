@@ -51,10 +51,11 @@ const toggleLoading = () => {
   }
 })();
 
-const renderWordsToDom = () => {
-
+const renderWordsToDom =  () => {
   if (filterOption === 1) {
-    filteredWords = words.filter((word) => word.length >= 2 && word.length <= 5);
+    filteredWords = words.filter(
+      (word) => word.length >= 2 && word.length <= 5
+    );
     document.getElementById("dropBtn").innerText = ">=2 <=5 characters";
   } else if (filterOption === 2) {
     filteredWords = words.filter((word) => word.length > 5 && word.length <= 8);
@@ -78,7 +79,6 @@ const renderWordsToDom = () => {
       wordElement.id = word;
       wordsDiv.appendChild(wordElement);
     });
-
   } else {
     // Display the words
     words.forEach((word) => {
@@ -88,9 +88,7 @@ const renderWordsToDom = () => {
       wordElement.id = word;
       wordsDiv.appendChild(wordElement);
     });
-
   }
-
 };
 
 const updateScore = (len) => {
@@ -107,7 +105,10 @@ textInput.addEventListener("input", async (event) => {
     filteredWords = words;
   }
 
-  if (enteredWords[enteredWords.length - 1] === filteredWords[filteredWords.length - 1]) {
+  if (
+    enteredWords[enteredWords.length - 1] ===
+    filteredWords[filteredWords.length - 1]
+  ) {
     wordsDiv.innerHTML = "";
     currentIndex = 0;
     textInput.value = "";
@@ -126,25 +127,35 @@ textInput.addEventListener("input", async (event) => {
 });
 
 length_1.addEventListener("click", () => {
-
+  if (filterOption === 1) {
+    return;
+  }
   filterOption = 1;
   currentIndex = 0;
   filteredWords = words.filter((word) => word.length >= 2 && word.length <= 5);
   renderWordsToDom();
 });
 length_2.addEventListener("click", () => {
+  if (filterOption === 2) {
+    return;
+  }
+
   filterOption = 2;
   currentIndex = 0;
   filteredWords = words.filter((word) => word.length > 5 && word.length <= 8);
   renderWordsToDom();
 });
 length_3.addEventListener("click", () => {
+  if (filterOption === 3) {
+    return;
+  }
+
   filterOption = 3;
   currentIndex = 0;
   filteredWords = words.filter((word) => word.length > 8);
   renderWordsToDom();
 });
 
-window.addEventListener("selectstart", function(e) {
+window.addEventListener("selectstart", function (e) {
   e.preventDefault();
 });
